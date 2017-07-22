@@ -17,7 +17,7 @@ namespace SimpleParser.Core
 
         public async Task<string> GetSourceByPageId(int id)
         {
-            var currentUrl = url.Replace("{CurrentId}", id.ToString());
+            var currentUrl = url.Replace("{%PageID%}", id.ToString());
             var responce = await client.GetAsync(currentUrl);
             string source = null;
 

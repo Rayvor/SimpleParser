@@ -34,10 +34,10 @@ namespace SimpleParser
         {
             //ListTitles.Items.Clear();
 
-            //foreach (var item in storageListTitles)
-            //{
-            //    ListTitles.Items.AddRange(item);
-            //}
+            foreach (var item in storageListTitles)
+            {
+                ListTitles.Items.AddRange(item);
+            }
 
             labelProgressStatus.Text = "Done.";
             pageNumber = 0;
@@ -45,8 +45,6 @@ namespace SimpleParser
 
         private void Parser_OnNewData(object arg1, string[] arg2)
         {
-            ListTitles.Items.Add($"Page {++pageNumber}");
-
             storageListTitles.Add(arg2);
         }
 
@@ -57,10 +55,10 @@ namespace SimpleParser
             parser.Settings = new HabrSettings(
                 (int)NumericStart.Value,
                 (int)NumericEnd.Value,
-                "http://habrahabr.ru/all/",
-                "page{CurrentId}" );
+                textBaseUrl.Text,
+                textPrefix.Text );
 
-            parser.Start();
+            parser.Start(textSelector.Text, textContent.Text);
         }
 
         private void Abort_Click(object sender, EventArgs e)
@@ -69,7 +67,6 @@ namespace SimpleParser
 
             ListTitles.Items.Clear();
             storageListTitles.Clear();
-
         }
 
         private void progressBar_Click(object sender, EventArgs e)

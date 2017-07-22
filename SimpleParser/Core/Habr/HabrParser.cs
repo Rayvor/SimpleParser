@@ -9,10 +9,10 @@ namespace SimpleParser.Core.Habr
 {
     class HabrParser : IParser<string[]>
     {
-        public string[] Parse(IHtmlDocument document)
+        public string[] Parse(IHtmlDocument document, string selector, string content)
         {
             var list = new List<string>();
-            var items = document.QuerySelectorAll("a").Where(item => item.ClassName != null && item.ClassName.Contains("post__title_link"));
+            var items = document.QuerySelectorAll(selector).Where(item => item.ClassName != null && item.ClassName.Contains(content));
 
             foreach (var item in items)
             {

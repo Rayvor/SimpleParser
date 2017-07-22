@@ -57,10 +57,10 @@ namespace SimpleParser.Core
 
         }
 
-        public void Start()
+        public void Start(string selector, string content)
         {
             isActive = true;
-            Worker();
+            Worker(selector, content);
         }
 
         public void Abort()
@@ -68,7 +68,7 @@ namespace SimpleParser.Core
             isActive = false;
         }
 
-        private async void Worker()
+        private async void Worker(string selector, string content)
         {
             for (int i = parserSettings.StartPoint; i < parserSettings.EndPoint; i++)
             {
@@ -83,7 +83,7 @@ namespace SimpleParser.Core
 
                 var document = await domParser.ParseAsync(source);
 
-                var result = parser.Parse(document);
+                var result = parser.Parse(document, selector, content);
 
                 OnNewData?.Invoke(this, result);
             }

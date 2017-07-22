@@ -35,14 +35,18 @@
             this.Abort = new System.Windows.Forms.Button();
             this.ListTitles = new System.Windows.Forms.ListBox();
             this.panelSettings = new System.Windows.Forms.Panel();
-            this.panelStatus = new System.Windows.Forms.Panel();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.labelProgressStatus = new System.Windows.Forms.Label();
-            this.labelBaseUrl = new System.Windows.Forms.Label();
-            this.textBaseUrl = new System.Windows.Forms.TextBox();
-            this.labelPrefix = new System.Windows.Forms.Label();
-            this.textPrefix = new System.Windows.Forms.TextBox();
             this.labelEndId = new System.Windows.Forms.Label();
+            this.textPrefix = new System.Windows.Forms.TextBox();
+            this.labelPrefix = new System.Windows.Forms.Label();
+            this.textBaseUrl = new System.Windows.Forms.TextBox();
+            this.labelBaseUrl = new System.Windows.Forms.Label();
+            this.panelStatus = new System.Windows.Forms.Panel();
+            this.labelProgressStatus = new System.Windows.Forms.Label();
+            this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.textSelector = new System.Windows.Forms.TextBox();
+            this.labelSelector = new System.Windows.Forms.Label();
+            this.textContent = new System.Windows.Forms.TextBox();
+            this.labelContent = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NumericStart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericEnd)).BeginInit();
             this.panelSettings.SuspendLayout();
@@ -73,7 +77,7 @@
             // 
             // Start
             // 
-            this.Start.Location = new System.Drawing.Point(11, 269);
+            this.Start.Location = new System.Drawing.Point(129, 295);
             this.Start.Name = "Start";
             this.Start.Size = new System.Drawing.Size(75, 23);
             this.Start.TabIndex = 3;
@@ -95,7 +99,7 @@
             // 
             // Abort
             // 
-            this.Abort.Location = new System.Drawing.Point(11, 298);
+            this.Abort.Location = new System.Drawing.Point(129, 324);
             this.Abort.Name = "Abort";
             this.Abort.Size = new System.Drawing.Size(75, 23);
             this.Abort.TabIndex = 6;
@@ -109,11 +113,15 @@
             this.ListTitles.FormattingEnabled = true;
             this.ListTitles.Location = new System.Drawing.Point(0, 0);
             this.ListTitles.Name = "ListTitles";
-            this.ListTitles.Size = new System.Drawing.Size(540, 357);
+            this.ListTitles.Size = new System.Drawing.Size(791, 383);
             this.ListTitles.TabIndex = 7;
             // 
             // panelSettings
             // 
+            this.panelSettings.Controls.Add(this.textContent);
+            this.panelSettings.Controls.Add(this.labelContent);
+            this.panelSettings.Controls.Add(this.textSelector);
+            this.panelSettings.Controls.Add(this.labelSelector);
             this.panelSettings.Controls.Add(this.labelEndId);
             this.panelSettings.Controls.Add(this.textPrefix);
             this.panelSettings.Controls.Add(this.labelPrefix);
@@ -125,71 +133,10 @@
             this.panelSettings.Controls.Add(this.NumericEnd);
             this.panelSettings.Controls.Add(this.Start);
             this.panelSettings.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelSettings.Location = new System.Drawing.Point(324, 0);
+            this.panelSettings.Location = new System.Drawing.Point(575, 0);
             this.panelSettings.Name = "panelSettings";
-            this.panelSettings.Size = new System.Drawing.Size(216, 327);
+            this.panelSettings.Size = new System.Drawing.Size(216, 353);
             this.panelSettings.TabIndex = 8;
-            // 
-            // panelStatus
-            // 
-            this.panelStatus.Controls.Add(this.labelProgressStatus);
-            this.panelStatus.Controls.Add(this.progressBar);
-            this.panelStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelStatus.Location = new System.Drawing.Point(0, 327);
-            this.panelStatus.Name = "panelStatus";
-            this.panelStatus.Size = new System.Drawing.Size(540, 30);
-            this.panelStatus.TabIndex = 9;
-            // 
-            // progressBar
-            // 
-            this.progressBar.Location = new System.Drawing.Point(0, 3);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(145, 23);
-            this.progressBar.TabIndex = 0;
-            this.progressBar.Click += new System.EventHandler(this.progressBar_Click);
-            // 
-            // labelProgressStatus
-            // 
-            this.labelProgressStatus.AutoSize = true;
-            this.labelProgressStatus.Location = new System.Drawing.Point(145, 8);
-            this.labelProgressStatus.Name = "labelProgressStatus";
-            this.labelProgressStatus.Size = new System.Drawing.Size(0, 13);
-            this.labelProgressStatus.TabIndex = 2;
-            this.labelProgressStatus.Tag = " ";
-            // 
-            // labelBaseUrl
-            // 
-            this.labelBaseUrl.AutoSize = true;
-            this.labelBaseUrl.Location = new System.Drawing.Point(9, 105);
-            this.labelBaseUrl.Name = "labelBaseUrl";
-            this.labelBaseUrl.Size = new System.Drawing.Size(56, 13);
-            this.labelBaseUrl.TabIndex = 7;
-            this.labelBaseUrl.Text = "Base URL";
-            // 
-            // textBaseUrl
-            // 
-            this.textBaseUrl.Location = new System.Drawing.Point(12, 121);
-            this.textBaseUrl.Name = "textBaseUrl";
-            this.textBaseUrl.Size = new System.Drawing.Size(123, 20);
-            this.textBaseUrl.TabIndex = 8;
-            this.textBaseUrl.Text = "http://habrahabr.ru";
-            // 
-            // labelPrefix
-            // 
-            this.labelPrefix.AutoSize = true;
-            this.labelPrefix.Location = new System.Drawing.Point(9, 156);
-            this.labelPrefix.Name = "labelPrefix";
-            this.labelPrefix.Size = new System.Drawing.Size(33, 13);
-            this.labelPrefix.TabIndex = 9;
-            this.labelPrefix.Text = "Prefix";
-            // 
-            // textPrefix
-            // 
-            this.textPrefix.Location = new System.Drawing.Point(12, 172);
-            this.textPrefix.Name = "textPrefix";
-            this.textPrefix.Size = new System.Drawing.Size(123, 20);
-            this.textPrefix.TabIndex = 10;
-            this.textPrefix.Text = "page{CurrentId}";
             // 
             // labelEndId
             // 
@@ -201,11 +148,106 @@
             this.labelEndId.Tag = " ";
             this.labelEndId.Text = "End Page ID";
             // 
+            // textPrefix
+            // 
+            this.textPrefix.Location = new System.Drawing.Point(12, 167);
+            this.textPrefix.Name = "textPrefix";
+            this.textPrefix.Size = new System.Drawing.Size(123, 20);
+            this.textPrefix.TabIndex = 10;
+            this.textPrefix.Text = "page{%PageID%}";
+            // 
+            // labelPrefix
+            // 
+            this.labelPrefix.AutoSize = true;
+            this.labelPrefix.Location = new System.Drawing.Point(9, 151);
+            this.labelPrefix.Name = "labelPrefix";
+            this.labelPrefix.Size = new System.Drawing.Size(33, 13);
+            this.labelPrefix.TabIndex = 9;
+            this.labelPrefix.Text = "Prefix";
+            // 
+            // textBaseUrl
+            // 
+            this.textBaseUrl.Location = new System.Drawing.Point(12, 121);
+            this.textBaseUrl.Name = "textBaseUrl";
+            this.textBaseUrl.Size = new System.Drawing.Size(123, 20);
+            this.textBaseUrl.TabIndex = 8;
+            this.textBaseUrl.Text = "http://habrahabr.ru/all/";
+            // 
+            // labelBaseUrl
+            // 
+            this.labelBaseUrl.AutoSize = true;
+            this.labelBaseUrl.Location = new System.Drawing.Point(9, 105);
+            this.labelBaseUrl.Name = "labelBaseUrl";
+            this.labelBaseUrl.Size = new System.Drawing.Size(56, 13);
+            this.labelBaseUrl.TabIndex = 7;
+            this.labelBaseUrl.Text = "Base URL";
+            // 
+            // panelStatus
+            // 
+            this.panelStatus.Controls.Add(this.labelProgressStatus);
+            this.panelStatus.Controls.Add(this.progressBar);
+            this.panelStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.panelStatus.Location = new System.Drawing.Point(0, 353);
+            this.panelStatus.Name = "panelStatus";
+            this.panelStatus.Size = new System.Drawing.Size(791, 30);
+            this.panelStatus.TabIndex = 9;
+            // 
+            // labelProgressStatus
+            // 
+            this.labelProgressStatus.AutoSize = true;
+            this.labelProgressStatus.Location = new System.Drawing.Point(145, 8);
+            this.labelProgressStatus.Name = "labelProgressStatus";
+            this.labelProgressStatus.Size = new System.Drawing.Size(0, 13);
+            this.labelProgressStatus.TabIndex = 2;
+            this.labelProgressStatus.Tag = " ";
+            // 
+            // progressBar
+            // 
+            this.progressBar.Location = new System.Drawing.Point(0, 3);
+            this.progressBar.Name = "progressBar";
+            this.progressBar.Size = new System.Drawing.Size(145, 23);
+            this.progressBar.TabIndex = 0;
+            this.progressBar.Click += new System.EventHandler(this.progressBar_Click);
+            // 
+            // textSelector
+            // 
+            this.textSelector.Location = new System.Drawing.Point(12, 212);
+            this.textSelector.Name = "textSelector";
+            this.textSelector.Size = new System.Drawing.Size(123, 20);
+            this.textSelector.TabIndex = 13;
+            this.textSelector.Text = "a";
+            // 
+            // labelSelector
+            // 
+            this.labelSelector.AutoSize = true;
+            this.labelSelector.Location = new System.Drawing.Point(9, 196);
+            this.labelSelector.Name = "labelSelector";
+            this.labelSelector.Size = new System.Drawing.Size(46, 13);
+            this.labelSelector.TabIndex = 12;
+            this.labelSelector.Text = "Selector";
+            // 
+            // textContent
+            // 
+            this.textContent.Location = new System.Drawing.Point(12, 254);
+            this.textContent.Name = "textContent";
+            this.textContent.Size = new System.Drawing.Size(123, 20);
+            this.textContent.TabIndex = 15;
+            this.textContent.Text = "post__title_link";
+            // 
+            // labelContent
+            // 
+            this.labelContent.AutoSize = true;
+            this.labelContent.Location = new System.Drawing.Point(9, 238);
+            this.labelContent.Name = "labelContent";
+            this.labelContent.Size = new System.Drawing.Size(44, 13);
+            this.labelContent.TabIndex = 14;
+            this.labelContent.Text = "Content";
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(540, 357);
+            this.ClientSize = new System.Drawing.Size(791, 383);
             this.Controls.Add(this.panelSettings);
             this.Controls.Add(this.panelStatus);
             this.Controls.Add(this.ListTitles);
@@ -237,6 +279,10 @@
         private System.Windows.Forms.TextBox textBaseUrl;
         private System.Windows.Forms.Label labelBaseUrl;
         private System.Windows.Forms.Label labelEndId;
+        private System.Windows.Forms.TextBox textContent;
+        private System.Windows.Forms.Label labelContent;
+        private System.Windows.Forms.TextBox textSelector;
+        private System.Windows.Forms.Label labelSelector;
     }
 }
 
