@@ -37,6 +37,12 @@ namespace SimpleParser
         private void Parser_OnCompleted(object obj)
         {
             labelProgressStatus.Text = "Done.";
+
+            var parserWorker = (ParserWorker<List<string>>) obj;
+            
+            if (!parserWorker.IsActive)
+                labelProgressStatus.Text = "Aborted.";
+
             pageNumber = 0;
         }
 
@@ -57,7 +63,6 @@ namespace SimpleParser
         private void Abort_Click(object sender, EventArgs e)
         {
             parser.Abort();
-            labelProgressStatus.Text = "Aborted";
         }
 
         private void progressBar_Click(object sender, EventArgs e)
