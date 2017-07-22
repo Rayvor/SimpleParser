@@ -46,7 +46,6 @@
             this.labelBaseUrl = new System.Windows.Forms.Label();
             this.panelStatus = new System.Windows.Forms.Panel();
             this.labelProgressStatus = new System.Windows.Forms.Label();
-            this.progressBar = new System.Windows.Forms.ProgressBar();
             this.buttonClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NumericStart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericEnd)).BeginInit();
@@ -113,7 +112,7 @@
             this.ListTitles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListTitles.Location = new System.Drawing.Point(0, 0);
             this.ListTitles.Name = "ListTitles";
-            this.ListTitles.Size = new System.Drawing.Size(590, 377);
+            this.ListTitles.Size = new System.Drawing.Size(590, 389);
             this.ListTitles.TabIndex = 7;
             // 
             // panelSettings
@@ -136,7 +135,7 @@
             this.panelSettings.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelSettings.Location = new System.Drawing.Point(590, 0);
             this.panelSettings.Name = "panelSettings";
-            this.panelSettings.Size = new System.Drawing.Size(149, 377);
+            this.panelSettings.Size = new System.Drawing.Size(149, 389);
             this.panelSettings.TabIndex = 8;
             // 
             // textContent
@@ -220,29 +219,22 @@
             // panelStatus
             // 
             this.panelStatus.Controls.Add(this.labelProgressStatus);
-            this.panelStatus.Controls.Add(this.progressBar);
             this.panelStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelStatus.Location = new System.Drawing.Point(0, 377);
+            this.panelStatus.Location = new System.Drawing.Point(0, 389);
             this.panelStatus.Name = "panelStatus";
-            this.panelStatus.Size = new System.Drawing.Size(739, 30);
+            this.panelStatus.Size = new System.Drawing.Size(739, 18);
             this.panelStatus.TabIndex = 9;
             // 
             // labelProgressStatus
             // 
             this.labelProgressStatus.AutoSize = true;
-            this.labelProgressStatus.Location = new System.Drawing.Point(145, 8);
+            this.labelProgressStatus.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.labelProgressStatus.Location = new System.Drawing.Point(0, 0);
             this.labelProgressStatus.Name = "labelProgressStatus";
             this.labelProgressStatus.Size = new System.Drawing.Size(0, 13);
             this.labelProgressStatus.TabIndex = 2;
             this.labelProgressStatus.Tag = " ";
-            // 
-            // progressBar
-            // 
-            this.progressBar.Location = new System.Drawing.Point(0, 3);
-            this.progressBar.Name = "progressBar";
-            this.progressBar.Size = new System.Drawing.Size(145, 23);
-            this.progressBar.TabIndex = 0;
-            this.progressBar.Click += new System.EventHandler(this.progressBar_Click);
+            this.labelProgressStatus.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // buttonClear
             // 
@@ -283,7 +275,6 @@
         private System.Windows.Forms.Panel panelSettings;
         private System.Windows.Forms.Panel panelStatus;
         private System.Windows.Forms.Label labelProgressStatus;
-        private System.Windows.Forms.ProgressBar progressBar;
         private System.Windows.Forms.TextBox textPrefix;
         private System.Windows.Forms.Label labelPrefix;
         private System.Windows.Forms.TextBox textBaseUrl;
