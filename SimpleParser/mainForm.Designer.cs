@@ -205,7 +205,7 @@
             this.textBaseUrl.Name = "textBaseUrl";
             this.textBaseUrl.Size = new System.Drawing.Size(123, 20);
             this.textBaseUrl.TabIndex = 8;
-            this.textBaseUrl.Text = "http://habrahabr.ru/all/";
+            this.textBaseUrl.Text = "http://habrahabr.ru/all";
             // 
             // labelBaseUrl
             // 

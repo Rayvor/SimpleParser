@@ -1,13 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using AngleSharp.Dom.Html;
 
-namespace SimpleParser.Core.Habr
+namespace SimpleParser.Core.Site
 {
-    class HabrParser : IParser<List<string>>
+    class SiteParser : IParser<List<string>>
     {
         public List<string> Parse(IHtmlDocument document, string selector, string content)
         {

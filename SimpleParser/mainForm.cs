@@ -1,5 +1,5 @@
 ﻿using SimpleParser.Core;
-using SimpleParser.Core.Habr;
+using SimpleParser.Core.Site;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,7 +21,7 @@ namespace SimpleParser
         {
             InitializeComponent();
             parser = new ParserWorker<List<string>>(
-                new HabrParser());
+                new SiteParser());
 
             parser.OnCompleted += Parser_OnCompleted;
             parser.OnNewData += Parser_OnNewData;
@@ -49,9 +49,9 @@ namespace SimpleParser
         private void Start_Click(object sender, EventArgs e)
         {
             ListTitles.Items.Clear();
-            labelProgressStatus.Text = "";
+            labelProgressStatus.Text = "Parsing...";
 
-            parser.Settings = new HabrSettings(
+            parser.Settings = new SiteSettings(
                 (int)NumericStart.Value,
                 (int)NumericEnd.Value,
                 textBaseUrl.Text,

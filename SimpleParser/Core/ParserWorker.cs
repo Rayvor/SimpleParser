@@ -1,9 +1,5 @@
 ﻿using AngleSharp.Parser.Html;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SimpleParser.Core
 {
@@ -70,7 +66,7 @@ namespace SimpleParser.Core
 
         private async void Worker(string selector, string content)
         {
-            for (int i = parserSettings.StartPoint; i < parserSettings.EndPoint; i++)
+            for (int i = parserSettings.StartPoint; i <= parserSettings.EndPoint; i++)
             {
                 if (!isActive)
                 {

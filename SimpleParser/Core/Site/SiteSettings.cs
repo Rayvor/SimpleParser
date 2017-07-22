@@ -1,8 +1,8 @@
-﻿namespace SimpleParser.Core.Habr
+﻿namespace SimpleParser.Core.Site
 {
-    class HabrSettings : IParserSettings
+    class SiteSettings : IParserSettings
     {
-        public HabrSettings(int start, int end, string baseUrl, string prefix)
+        public SiteSettings(int start, int end, string baseUrl, string prefix)
         {
             StartPoint = start;
             EndPoint = end;

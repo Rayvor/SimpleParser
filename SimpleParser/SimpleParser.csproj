@@ -48,8 +48,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Core\Habr\HabrParser.cs" />
-    <Compile Include="Core\Habr\HabrSettings.cs" />
+    <Compile Include="Core\Site\SiteParser.cs" />
+    <Compile Include="Core\Site\SiteSettings.cs" />
     <Compile Include="Core\HtmlLoader.cs" />
     <Compile Include="Core\IParser.cs" />
     <Compile Include="Core\IParserSettings.cs" />
