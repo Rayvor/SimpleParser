@@ -7,9 +7,9 @@ using AngleSharp.Dom.Html;
 
 namespace SimpleParser.Core.Habr
 {
-    class HabrParser : IParser<string[]>
+    class HabrParser : IParser<List<string>>
     {
-        public string[] Parse(IHtmlDocument document, string selector, string content)
+        public List<string> Parse(IHtmlDocument document, string selector, string content)
         {
             var list = new List<string>();
             var items = document.QuerySelectorAll(selector).Where(item => item.ClassName != null && item.ClassName.Contains(content));
@@ -19,7 +19,7 @@ namespace SimpleParser.Core.Habr
                 list.Add(item.TextContent);
             }
 
-            return list.ToArray();
+            return list;
         }
     }
 }

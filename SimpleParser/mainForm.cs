@@ -14,43 +14,39 @@ namespace SimpleParser
 {
     public partial class MainForm : Form
     {
-        ParserWorker<string[]> parser;
-        List<string[]> storageListTitles;
+        ParserWorker<List<string>> parser;
         int pageNumber;
 
         public MainForm()
         {
             InitializeComponent();
-            parser = new ParserWorker<string[]>(
+            parser = new ParserWorker<List<string>>(
                 new HabrParser());
-
-            storageListTitles = new List<string[]>();
 
             parser.OnCompleted += Parser_OnCompleted;
             parser.OnNewData += Parser_OnNewData;
         }
 
+        private void Parser_OnNewData(object arg1, List<string> arg2)
+        {
+            arg2.Insert(0, $"Page {++pageNumber}");
+            arg2.Add("");
+            ListTitles.Items.AddRange(arg2.ToArray());
+        }
+
         private void Parser_OnCompleted(object obj)
         {
             //ListTitles.Items.Clear();
-
-            foreach (var item in storageListTitles)
-            {
-                ListTitles.Items.AddRange(item);
-            }
+            
+           // ListTitles.Items.AddRange(storageListTitles.ToArray());
 
             labelProgressStatus.Text = "Done.";
             pageNumber = 0;
         }
 
-        private void Parser_OnNewData(object arg1, string[] arg2)
-        {
-            storageListTitles.Add(arg2);
-        }
-
         private void Start_Click(object sender, EventArgs e)
         {
-            //storageListTitles.Clear();
+            ListTitles.Items.Clear();
 
             parser.Settings = new HabrSettings(
                 (int)NumericStart.Value,
@@ -66,7 +62,6 @@ namespace SimpleParser
             parser.Abort();
 
             ListTitles.Items.Clear();
-            storageListTitles.Clear();
         }
 
         private void progressBar_Click(object sender, EventArgs e)
