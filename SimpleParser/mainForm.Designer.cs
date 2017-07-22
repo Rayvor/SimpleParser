@@ -35,6 +35,10 @@
             this.Abort = new System.Windows.Forms.Button();
             this.ListTitles = new System.Windows.Forms.ListBox();
             this.panelSettings = new System.Windows.Forms.Panel();
+            this.textContent = new System.Windows.Forms.TextBox();
+            this.labelContent = new System.Windows.Forms.Label();
+            this.textSelector = new System.Windows.Forms.TextBox();
+            this.labelSelector = new System.Windows.Forms.Label();
             this.labelEndId = new System.Windows.Forms.Label();
             this.textPrefix = new System.Windows.Forms.TextBox();
             this.labelPrefix = new System.Windows.Forms.Label();
@@ -43,10 +47,6 @@
             this.panelStatus = new System.Windows.Forms.Panel();
             this.labelProgressStatus = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
-            this.textSelector = new System.Windows.Forms.TextBox();
-            this.labelSelector = new System.Windows.Forms.Label();
-            this.textContent = new System.Windows.Forms.TextBox();
-            this.labelContent = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.NumericStart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericEnd)).BeginInit();
             this.panelSettings.SuspendLayout();
@@ -77,7 +77,7 @@
             // 
             // Start
             // 
-            this.Start.Location = new System.Drawing.Point(129, 295);
+            this.Start.Location = new System.Drawing.Point(60, 286);
             this.Start.Name = "Start";
             this.Start.Size = new System.Drawing.Size(75, 23);
             this.Start.TabIndex = 3;
@@ -99,7 +99,7 @@
             // 
             // Abort
             // 
-            this.Abort.Location = new System.Drawing.Point(129, 324);
+            this.Abort.Location = new System.Drawing.Point(60, 315);
             this.Abort.Name = "Abort";
             this.Abort.Size = new System.Drawing.Size(75, 23);
             this.Abort.TabIndex = 6;
@@ -110,10 +110,9 @@
             // ListTitles
             // 
             this.ListTitles.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ListTitles.FormattingEnabled = true;
             this.ListTitles.Location = new System.Drawing.Point(0, 0);
             this.ListTitles.Name = "ListTitles";
-            this.ListTitles.Size = new System.Drawing.Size(791, 383);
+            this.ListTitles.Size = new System.Drawing.Size(592, 343);
             this.ListTitles.TabIndex = 7;
             // 
             // panelSettings
@@ -133,10 +132,44 @@
             this.panelSettings.Controls.Add(this.NumericEnd);
             this.panelSettings.Controls.Add(this.Start);
             this.panelSettings.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelSettings.Location = new System.Drawing.Point(575, 0);
+            this.panelSettings.Location = new System.Drawing.Point(592, 0);
             this.panelSettings.Name = "panelSettings";
-            this.panelSettings.Size = new System.Drawing.Size(216, 353);
+            this.panelSettings.Size = new System.Drawing.Size(149, 343);
             this.panelSettings.TabIndex = 8;
+            // 
+            // textContent
+            // 
+            this.textContent.Location = new System.Drawing.Point(12, 254);
+            this.textContent.Name = "textContent";
+            this.textContent.Size = new System.Drawing.Size(123, 20);
+            this.textContent.TabIndex = 15;
+            this.textContent.Text = "post__title_link";
+            // 
+            // labelContent
+            // 
+            this.labelContent.AutoSize = true;
+            this.labelContent.Location = new System.Drawing.Point(9, 238);
+            this.labelContent.Name = "labelContent";
+            this.labelContent.Size = new System.Drawing.Size(44, 13);
+            this.labelContent.TabIndex = 14;
+            this.labelContent.Text = "Content";
+            // 
+            // textSelector
+            // 
+            this.textSelector.Location = new System.Drawing.Point(12, 212);
+            this.textSelector.Name = "textSelector";
+            this.textSelector.Size = new System.Drawing.Size(123, 20);
+            this.textSelector.TabIndex = 13;
+            this.textSelector.Text = "a";
+            // 
+            // labelSelector
+            // 
+            this.labelSelector.AutoSize = true;
+            this.labelSelector.Location = new System.Drawing.Point(9, 196);
+            this.labelSelector.Name = "labelSelector";
+            this.labelSelector.Size = new System.Drawing.Size(46, 13);
+            this.labelSelector.TabIndex = 12;
+            this.labelSelector.Text = "Selector";
             // 
             // labelEndId
             // 
@@ -187,9 +220,9 @@
             this.panelStatus.Controls.Add(this.labelProgressStatus);
             this.panelStatus.Controls.Add(this.progressBar);
             this.panelStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelStatus.Location = new System.Drawing.Point(0, 353);
+            this.panelStatus.Location = new System.Drawing.Point(0, 343);
             this.panelStatus.Name = "panelStatus";
-            this.panelStatus.Size = new System.Drawing.Size(791, 30);
+            this.panelStatus.Size = new System.Drawing.Size(741, 30);
             this.panelStatus.TabIndex = 9;
             // 
             // labelProgressStatus
@@ -209,48 +242,14 @@
             this.progressBar.TabIndex = 0;
             this.progressBar.Click += new System.EventHandler(this.progressBar_Click);
             // 
-            // textSelector
-            // 
-            this.textSelector.Location = new System.Drawing.Point(12, 212);
-            this.textSelector.Name = "textSelector";
-            this.textSelector.Size = new System.Drawing.Size(123, 20);
-            this.textSelector.TabIndex = 13;
-            this.textSelector.Text = "a";
-            // 
-            // labelSelector
-            // 
-            this.labelSelector.AutoSize = true;
-            this.labelSelector.Location = new System.Drawing.Point(9, 196);
-            this.labelSelector.Name = "labelSelector";
-            this.labelSelector.Size = new System.Drawing.Size(46, 13);
-            this.labelSelector.TabIndex = 12;
-            this.labelSelector.Text = "Selector";
-            // 
-            // textContent
-            // 
-            this.textContent.Location = new System.Drawing.Point(12, 254);
-            this.textContent.Name = "textContent";
-            this.textContent.Size = new System.Drawing.Size(123, 20);
-            this.textContent.TabIndex = 15;
-            this.textContent.Text = "post__title_link";
-            // 
-            // labelContent
-            // 
-            this.labelContent.AutoSize = true;
-            this.labelContent.Location = new System.Drawing.Point(9, 238);
-            this.labelContent.Name = "labelContent";
-            this.labelContent.Size = new System.Drawing.Size(44, 13);
-            this.labelContent.TabIndex = 14;
-            this.labelContent.Text = "Content";
-            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(791, 383);
+            this.ClientSize = new System.Drawing.Size(741, 373);
+            this.Controls.Add(this.ListTitles);
             this.Controls.Add(this.panelSettings);
             this.Controls.Add(this.panelStatus);
-            this.Controls.Add(this.ListTitles);
             this.Name = "MainForm";
             this.Text = "Simple Parser";
             ((System.ComponentModel.ISupportInitialize)(this.NumericStart)).EndInit();

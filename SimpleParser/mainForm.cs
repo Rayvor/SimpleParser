@@ -36,10 +36,6 @@ namespace SimpleParser
 
         private void Parser_OnCompleted(object obj)
         {
-            //ListTitles.Items.Clear();
-            
-           // ListTitles.Items.AddRange(storageListTitles.ToArray());
-
             labelProgressStatus.Text = "Done.";
             pageNumber = 0;
         }
@@ -47,6 +43,7 @@ namespace SimpleParser
         private void Start_Click(object sender, EventArgs e)
         {
             ListTitles.Items.Clear();
+            labelProgressStatus.Text = "";
 
             parser.Settings = new HabrSettings(
                 (int)NumericStart.Value,
@@ -62,6 +59,7 @@ namespace SimpleParser
             parser.Abort();
 
             ListTitles.Items.Clear();
+            labelProgressStatus.Text = "";
         }
 
         private void progressBar_Click(object sender, EventArgs e)
