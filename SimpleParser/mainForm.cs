@@ -57,13 +57,13 @@ namespace SimpleParser
         private void Abort_Click(object sender, EventArgs e)
         {
             parser.Abort();
-
-            ListTitles.Items.Clear();
-            labelProgressStatus.Text = "";
+            labelProgressStatus.Text = "Aborted";
         }
 
         private void progressBar_Click(object sender, EventArgs e)
         {
+            labelProgressStatus.Text = "";
+            ListTitles.Items.Clear();
         }
     }
 }

@@ -47,6 +47,7 @@
             this.panelStatus = new System.Windows.Forms.Panel();
             this.labelProgressStatus = new System.Windows.Forms.Label();
             this.progressBar = new System.Windows.Forms.ProgressBar();
+            this.buttonClear = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.NumericStart)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.NumericEnd)).BeginInit();
             this.panelSettings.SuspendLayout();
@@ -99,7 +100,7 @@
             // 
             // Abort
             // 
-            this.Abort.Location = new System.Drawing.Point(60, 315);
+            this.Abort.Location = new System.Drawing.Point(60, 344);
             this.Abort.Name = "Abort";
             this.Abort.Size = new System.Drawing.Size(75, 23);
             this.Abort.TabIndex = 6;
@@ -112,11 +113,12 @@
             this.ListTitles.Dock = System.Windows.Forms.DockStyle.Fill;
             this.ListTitles.Location = new System.Drawing.Point(0, 0);
             this.ListTitles.Name = "ListTitles";
-            this.ListTitles.Size = new System.Drawing.Size(592, 343);
+            this.ListTitles.Size = new System.Drawing.Size(590, 377);
             this.ListTitles.TabIndex = 7;
             // 
             // panelSettings
             // 
+            this.panelSettings.Controls.Add(this.buttonClear);
             this.panelSettings.Controls.Add(this.textContent);
             this.panelSettings.Controls.Add(this.labelContent);
             this.panelSettings.Controls.Add(this.textSelector);
@@ -132,9 +134,9 @@
             this.panelSettings.Controls.Add(this.NumericEnd);
             this.panelSettings.Controls.Add(this.Start);
             this.panelSettings.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelSettings.Location = new System.Drawing.Point(592, 0);
+            this.panelSettings.Location = new System.Drawing.Point(590, 0);
             this.panelSettings.Name = "panelSettings";
-            this.panelSettings.Size = new System.Drawing.Size(149, 343);
+            this.panelSettings.Size = new System.Drawing.Size(149, 377);
             this.panelSettings.TabIndex = 8;
             // 
             // textContent
@@ -220,9 +222,9 @@
             this.panelStatus.Controls.Add(this.labelProgressStatus);
             this.panelStatus.Controls.Add(this.progressBar);
             this.panelStatus.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelStatus.Location = new System.Drawing.Point(0, 343);
+            this.panelStatus.Location = new System.Drawing.Point(0, 377);
             this.panelStatus.Name = "panelStatus";
-            this.panelStatus.Size = new System.Drawing.Size(741, 30);
+            this.panelStatus.Size = new System.Drawing.Size(739, 30);
             this.panelStatus.TabIndex = 9;
             // 
             // labelProgressStatus
@@ -242,11 +244,20 @@
             this.progressBar.TabIndex = 0;
             this.progressBar.Click += new System.EventHandler(this.progressBar_Click);
             // 
+            // buttonClear
+            // 
+            this.buttonClear.Location = new System.Drawing.Point(60, 315);
+            this.buttonClear.Name = "buttonClear";
+            this.buttonClear.Size = new System.Drawing.Size(75, 23);
+            this.buttonClear.TabIndex = 16;
+            this.buttonClear.Text = "Clear";
+            this.buttonClear.UseVisualStyleBackColor = true;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(741, 373);
+            this.ClientSize = new System.Drawing.Size(739, 407);
             this.Controls.Add(this.ListTitles);
             this.Controls.Add(this.panelSettings);
             this.Controls.Add(this.panelStatus);
@@ -282,6 +293,7 @@
         private System.Windows.Forms.Label labelContent;
         private System.Windows.Forms.TextBox textSelector;
         private System.Windows.Forms.Label labelSelector;
+        private System.Windows.Forms.Button buttonClear;
     }
 }
 
