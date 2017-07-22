@@ -65,7 +65,7 @@ namespace SimpleParser
             parser.Abort();
         }
 
-        private void progressBar_Click(object sender, EventArgs e)
+        private void buttonClear_Click(object sender, EventArgs e)
         {
             labelProgressStatus.Text = "";
             ListTitles.Items.Clear();
